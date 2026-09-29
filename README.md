@@ -21,17 +21,4 @@ Managers start with a strict **€250M budget** to assemble a 7-a-side squad via
 
 ---
 
-## 🏗️ Architecture & Stackfergie-time/
-├── src/
-│   ├── app/                 # Next.js App Router (dashboard, draft, timeline)
-│   ├── components/          # Reusable UI (PlayerCard, MarketTicker, SquadGrid)
-│   ├── config/              # Balance variables (budget limits, fees, market volatility)
-│   ├── data/                # Static historical player database and valuation curves
-│   ├── engine/              # Pure TypeScript game simulation rules (framework-agnostic)
-│   │   ├── draft.ts         # Blind selection validation and pool generation
-│   │   ├── market.ts        # Inflation rates, sale taxes, and value updates
-│   │   └── timeline.ts      # 10-year annual state resolution
-│   ├── stores/              # Zustand global state (gameStore, portfolioStore)
-│   └── types/               # TypeScript schemas (Player, Squad, Season, Asset)
-
 ---
