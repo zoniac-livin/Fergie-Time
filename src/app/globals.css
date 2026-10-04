@@ -1,0 +1,160 @@
+@import "tailwindcss";
+
+:root {
+  /* ==========================================================================
+     Design Tokens: Colors
+     ========================================================================== */
+  /* Backgrounds & Surfaces */
+  --color-bg-page: #08090b;
+  --color-bg-card: #12161f;
+  --color-bg-card-subtle: #0e121a;
+  --color-bg-surface: #141822;
+  --color-bg-elevated: #1a2130;
+  --color-bg-hover: #252f44;
+  --color-bg-skeleton: #1e2533;
+  --color-bg-badge: #1f2633;
+  --color-bg-avatar: #171c26;
+  --color-bg-hud: #0d1017;
+  --color-bg-overlay: rgba(0, 0, 0, 0.85);
+
+  /* Borders */
+  --color-border-default: #272f3d;
+  --color-border-subtle: #202735;
+  --color-border-muted: #1e293b;
+  --color-border-focus: #94a3b8;
+
+  /* Accent (Terminal Brand Neon) */
+  --color-accent-primary: #00f076;
+  --color-accent-hover: #10ff88;
+  --color-accent-subtle: rgba(0, 240, 118, 0.1);
+  --color-accent-border: rgba(0, 240, 118, 0.3);
+  --color-accent-border-focus: rgba(0, 240, 118, 0.4);
+  --color-accent-border-strong: rgba(0, 240, 118, 0.6);
+  --color-accent-pips: rgba(0, 240, 118, 0.2);
+  --color-accent-contrast: #000000;
+  --color-accent-glow: rgba(0, 240, 118, 0.25);
+  --color-accent-glow-modal: rgba(0, 240, 118, 0.15);
+
+  /* Text & Foreground */
+  --color-text-primary: #f8fafc;
+  --color-text-secondary: #94a3b8;
+  --color-text-muted: #64748b;
+  --color-text-faint: #475569;
+  --color-text-disabled: #475569;
+  --color-text-accent: #00f076;
+  --color-text-white: #ffffff;
+
+  /* Status / Feedback */
+  --color-warning: #fbbf24;
+  --color-danger: #f43f5e;
+  --color-error-text: #fecdd3;
+  --color-error-text-muted: #fb7185;
+  --color-error-border: rgba(244, 63, 94, 0.5);
+  --color-error-bg: rgba(76, 5, 25, 0.4);
+
+  /* ==========================================================================
+     Design Tokens: Fonts
+     ========================================================================== */
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+
+  /* ==========================================================================
+     Design Tokens: Border Radii
+     ========================================================================== */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-full: 9999px;
+}
+
+@theme inline {
+  --color-bg-page: var(--color-bg-page);
+  --color-bg-card: var(--color-bg-card);
+  --color-bg-card-subtle: var(--color-bg-card-subtle);
+  --color-bg-surface: var(--color-bg-surface);
+  --color-bg-elevated: var(--color-bg-elevated);
+  --color-bg-hover: var(--color-bg-hover);
+  --color-bg-skeleton: var(--color-bg-skeleton);
+  --color-bg-badge: var(--color-bg-badge);
+  --color-bg-avatar: var(--color-bg-avatar);
+  --color-bg-hud: var(--color-bg-hud);
+  --color-bg-overlay: var(--color-bg-overlay);
+
+  --color-border-default: var(--color-border-default);
+  --color-border-subtle: var(--color-border-subtle);
+  --color-border-muted: var(--color-border-muted);
+  --color-border-focus: var(--color-border-focus);
+
+  --color-accent-primary: var(--color-accent-primary);
+  --color-accent-hover: var(--color-accent-hover);
+  --color-accent-subtle: var(--color-accent-subtle);
+  --color-accent-border: var(--color-accent-border);
+  --color-accent-border-focus: var(--color-accent-border-focus);
+  --color-accent-border-strong: var(--color-accent-border-strong);
+  --color-accent-pips: var(--color-accent-pips);
+  --color-accent-contrast: var(--color-accent-contrast);
+  --color-accent-glow: var(--color-accent-glow);
+  --color-accent-glow-modal: var(--color-accent-glow-modal);
+
+  --color-text-primary: var(--color-text-primary);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-text-muted: var(--color-text-muted);
+  --color-text-faint: var(--color-text-faint);
+  --color-text-disabled: var(--color-text-disabled);
+  --color-text-accent: var(--color-text-accent);
+  --color-text-white: var(--color-text-white);
+
+  --color-warning: var(--color-warning);
+  --color-danger: var(--color-danger);
+  --color-error-text: var(--color-error-text);
+  --color-error-text-muted: var(--color-error-text-muted);
+  --color-error-border: var(--color-error-border);
+  --color-error-bg: var(--color-error-bg);
+
+  --font-mono: var(--font-mono);
+  --font-sans: var(--font-sans);
+
+  --radius-xs: var(--radius-xs);
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-full: var(--radius-full);
+}
+
+body {
+  background: var(--color-bg-page);
+  color: var(--color-text-primary);
+  font-family: var(--font-mono);
+}
+
+/* Mystery card tilt: only for fine pointers (mouse/trackpad), not touch */
+.mystery-card-tilt {
+  will-change: transform;
+  transform-style: preserve-3d;
+}
+
+@media not all and (hover: hover) and (pointer: fine) {
+  .mystery-card-tilt {
+    transform: none !important;
+    will-change: auto;
+  }
+}
+
+/* Reduced motion: disable all custom animations */
+@media (prefers-reduced-motion: reduce) {
+  .mystery-card-tilt {
+    transform: none !important;
+    will-change: auto;
+  }
+
+  /* Disable CSS animations/transitions globally for reduced motion */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
