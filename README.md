@@ -1,8 +1,10 @@
-# Fergie-Time
+# Football Investor
 
 A web-based football management and market simulation game. Build a 7-player squad through a **blind draft**, watch the identities get revealed, then manage your players through a **10-year market simulation** driven by real Transfermarkt valuation history. Your goal: finish with the highest club net worth.
 
-## How it works
+Inspired by the GOAL "Front Three" YouTube challenge. This is an unofficial fan project.
+
+## How it plays
 
 1. **Blind Draft.** Start with a budget of **€250,000,000**. Each card shows only a player's position, age, price and draft-season stats. No name, face, club or nationality. Fill exactly 1 GK, 2 DEF, 2 MID and 2 ATT. You get 3 skips. Every pick permanently spends part of your budget.
 2. **Squad Locked.** Once you have all 7 players, the squad is final.
@@ -88,6 +90,16 @@ AGENTS.md                  Working rules for AI coding agents
 - **No future leaks.** Nothing about later years is shown during the simulation, including chart scales.
 - **Accessible.** Keyboard operable, visible focus, text and symbols for gains and losses (not colour alone), and support for reduced motion.
 
+## Known limitations
+
+- The data has no club, nationality or clean-sheet information, so none is shown.
+- Players drafted in 2017 and 2018 lose value in the late years partly because the dataset ends, not only because of the market.
+- Percentage returns favour very cheap players, because every player in the pool peaked above €10M at some point.
+- The interface uses placeholder styling. A design pass is planned.
+- Some animations are not built yet (reveal flip, number transitions, results count-up).
+- Rank thresholds are provisional and may be tuned after more play-testing.
+- Player photos are loaded from the image links in the dataset and can fail. A silhouette is shown instead.
+
 ## Roadmap
 
 - A choice of 5 players per draft round instead of skips
@@ -97,8 +109,10 @@ AGENTS.md                  Working rules for AI coding agents
 
 ## Credits and disclaimer
 
-Data: player, appearance, game and valuation data come from the Football Data from Transfermarkt dataset by David Cereijo [davidcariboo](https://www.kaggle.com/davidcariboo), which is built from Transfermarkt. Player names and photos belong to their respective owners. Check the licence and terms of the dataset and of Transfermarkt before redistributing any data.
+This is a fan project for personal and educational use. It is not affiliated with or endorsed by GOAL or Transfermarkt.
+
+**Data:** player, appearance, game and valuation data come from the [Football Data from Transfermarkt](https://www.kaggle.com/datasets/davidcariboo/player-scores) dataset by David Cereijo (davidcariboo), which is built from [Transfermarkt](https://www.transfermarkt.com). Player names and photos belong to their respective owners. Check the licence and terms of the dataset and of Transfermarkt before redistributing any data.
 
 ## Licence
 
-No licence has been chosen yet.
+The source code is released under the MIT Licence (see [LICENSE](LICENSE)). The licence covers the code only. Player data, names and photos come from third parties and are not covered; see "Credits and disclaimer" above.
