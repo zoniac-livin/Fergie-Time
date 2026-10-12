@@ -2,8 +2,6 @@
 
 A web-based football management and market simulation game. Build a 7-player squad through a **blind draft**, watch the identities get revealed, then manage your players through a **10-year market simulation** driven by real Transfermarkt valuation history. Your goal: finish with the highest club net worth.
 
-Inspired by the GOAL "Front Three" YouTube challenge. This is an unofficial fan project.
-
 ## How it plays
 
 1. **Blind Draft.** Start with a budget of **€250,000,000**. Each card shows only a player's position, age, price and draft-season stats. No name, face, club or nationality. Fill exactly 1 GK, 2 DEF, 2 MID and 2 ATT. You get 3 skips. Every pick permanently spends part of your budget.
